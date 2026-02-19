@@ -1,0 +1,15 @@
+.Welcome{
+    display: flex;
+    background-color: red;
+    width: 100%;
+    height: 500px;
+}
+
+.Welcome > div{
+    width: 50%;
+}
+
+.Wel-img img{
+    width: 100%;
+    height: 100%;
+}

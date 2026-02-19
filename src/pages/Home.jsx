@@ -1,9 +1,12 @@
 import React from 'react'
+import Dash from '../components/Dash'
+import Welcome from '../components/Welcome'
 
 const home = () => {
   return (
     <>
-    <h1>This is the home page</h1> 
+    <Dash/>
+    <Welcome />
     </>
   )
 }
