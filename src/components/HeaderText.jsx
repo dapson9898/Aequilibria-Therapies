@@ -4,7 +4,8 @@ const HeaderText = (props) => {
     const style = {
         fontSize: "42px",
         textAlign: "center",
-        marginBottom: "10px"
+        marginBottom: "10px",
+        color: props.color 
     }
   return (
     <>

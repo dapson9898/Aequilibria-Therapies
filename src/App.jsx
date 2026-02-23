@@ -8,6 +8,7 @@ import BookSession from './pages/BookSession'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       <Route path="/" element={<Home />}/>
       <Route path="*" element={<NotFound />}/>
     </Routes>
+    <Footer />
     </>
   )
 }

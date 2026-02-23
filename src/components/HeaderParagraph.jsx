@@ -4,10 +4,10 @@ const HeaderParagraph = (props) => {
     const style = {
         fontSize: "18px",
         letterSpacing: "1px",
-        marginBottom: "10px",
+        marginBottom: "60px",
         lineHeight: "22px",
         textAlign: "center",
-        color: "gray",
+        color: props.color || "gray",
         fontWeight: "bold"
     }
   return (

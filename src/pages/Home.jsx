@@ -6,17 +6,19 @@ import Services from '../components/Services'
 import ServiceCard from '../components/ServiceCard'
 import Partners from '../components/Partners'
 import Patience from '../components/Patience'
+import Rating from '../components/Rating'
+import Appointment from '../components/Appointment'
 
 const home = () => {
   
   return (
     <>
-    <Dash/>
+    <Dash />
     <Welcome />
     <Services />
     <Partners />
     <Patience />
-    <Footer />
+    <Appointment />
     </>
   )
 }
