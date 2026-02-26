@@ -1,66 +1,45 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import './styles/Navbar.css'
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+const links = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/book-session', label: 'Book Session' },
+  { to: '/alternative-medicine', label: 'Alternative Medicine' },
+  { to: '/contact', label: 'Contact' },
+]
 
-  const toggleMenu = () => setIsOpen(prev => !prev)
-
-  const closeMenu = () => setIsOpen(false)
+export default function Navbar() {
+  const location = useLocation()
+  const [open, setOpen] = useState(false)
 
   return (
-    <header>
-      <div className='logo'>
-        <Link to="/"><h1>Aequilibria Therapies</h1></Link>
-      </div>
+    <nav className="navbar">
+      <div className="nav-inner">
+        <Link to="/" className="nav-logo">Aequilibria Therapies</Link>
 
-      <button
-        className="nav-toggle"
-        aria-label="Toggle navigation"
-        aria-expanded={isOpen}
-        onClick={toggleMenu}
-      >
-        <span className="hamburger">☰</span>
-      </button>
+        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
 
-      <div className={`links ${isOpen ? 'open' : ''}`}>
-        <ul>
-          <li>
-            <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
-              Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/book-session" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
-              Book Session
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/alternative-medicine" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
-              Alternative Medicine
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''} onClick={closeMenu}>
-              Contact
-            </NavLink>
-          </li>
+        <ul className={`nav-links ${open ? 'open' : ''}`}>
+          {links.map(l => (
+            <li key={l.to}>
+              <Link
+                to={l.to}
+                className={location.pathname === l.to ? 'active' : ''}
+                onClick={() => setOpen(false)}
+              >{l.label}</Link>
+            </li>
+          ))}
         </ul>
-        <button className="primary-cta">Book Now</button>
+
+        <Link to="/book-session" className="nav-book btn-primary" onClick={() => setOpen(false)}>
+          Book Now
+        </Link>
       </div>
-    </header>
+    </nav>
   )
 }
-
-export default Navbar
