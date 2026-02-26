@@ -1,0 +1,138 @@
+.about-hero {
+    background: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=80") center / cover no-repeat;
+    min-height: 92vh;
+}
+
+/* Story */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.story-img img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+.story-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+.story-text p {
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Mission / Vision */
+.mission-section {
+    background: var(--bg-light);
+    padding: 3.5rem 0;
+}
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.mission-card {
+    padding: 2rem 2.5rem;
+}
+.mission-card h3 {
+    font-size: 1.4rem;
+    color: var(--teal-dark);
+    margin-bottom: 0.85rem;
+}
+.mission-card p {
+    color: var(--text-body);
+    line-height: 1.75;
+}
+
+/* Different */
+.diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+.diff-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+.diff-card:hover {
+    transform: translateY(-2px);
+}
+.diff-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    background: var(--teal-light);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.diff-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+.diff-card p {
+    font-size: 0.88rem;
+    color: var(--text-body);
+    line-height: 1.65;
+}
+
+/* Credentials */
+.cred-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.cred-card {
+    border-radius: var(--radius);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--white);
+}
+.cred-teal {
+    background: var(--teal);
+}
+.cred-gold {
+    background: var(--gold);
+}
+.cred-num {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    line-height: 1;
+}
+.cred-card span:last-child {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+    .diff-grid {
+        grid-template-columns: 1fr;
+    }
+    .cred-grid {
+        grid-template-columns: 1fr;
+    }
+}

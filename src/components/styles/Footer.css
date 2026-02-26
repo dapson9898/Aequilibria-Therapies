@@ -110,4 +110,8 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    .footer-top{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
