@@ -1,0 +1,118 @@
+.services-hero {
+    background: url("https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1400&q=80")
+        center / cover no-repeat;
+}
+
+/* Service blocks */
+.svc-block {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.svc-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+/* flip = image on left, text on right */
+.svc-inner.flip {
+    direction: rtl;
+}
+.svc-inner.flip > * {
+    direction: ltr;
+}
+
+.svc-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+.svc-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: var(--teal-light);
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.svc-title-row h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.25rem;
+}
+.svc-subtitle {
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.svc-desc {
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 0.96rem;
+}
+
+.what-to-expect {
+    background: var(--teal-light);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.what-to-expect h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+.what-to-expect p {
+    font-size: 0.92rem;
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
+.svc-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+/* Integrated Care */
+.integrated-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem 3rem;
+    box-shadow: var(--shadow);
+    max-width: 900px;
+    margin: 0 auto;
+}
+.integrated-card p {
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+.integrated-card p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .svc-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .svc-inner.flip {
+        direction: ltr;
+    }
+    .svc-img {
+        order: -1;
+    }
+    .svc-img img {
+        height: 260px;
+    }
+    .integrated-card {
+        padding: 1.5rem;
+    }
+}

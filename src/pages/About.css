@@ -1,6 +1,6 @@
 .about-hero {
     background: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1400&q=80") center / cover no-repeat;
-    min-height: 92vh;
+    /* min-height: 92vh; */
 }
 
 /* Story */
