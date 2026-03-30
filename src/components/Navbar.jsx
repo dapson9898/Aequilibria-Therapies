@@ -8,6 +8,7 @@ const links = [
   { to: '/services', label: 'Services' },
   { to: '/book-session', label: 'Book Session' },
   { to: '/alternative-medicine', label: 'Alternative Medicine' },
+  { to: '/products', label: 'Products' },
   { to: '/contact', label: 'Contact' },
 ]
 

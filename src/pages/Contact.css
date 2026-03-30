@@ -1,0 +1,126 @@
+.contact-hero {
+    background: url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80") center / cover no-repeat;
+}
+
+/* Info Cards */
+.ci-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.ci-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+.ci-card:hover {
+    transform: translateY(-2px);
+}
+.ci-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--teal-light);
+    border-radius: 10px;
+    color: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.ci-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+.ci-card p {
+    font-size: 0.92rem;
+    color: var(--text-body);
+    line-height: 1.6;
+    margin-bottom: 0.2rem;
+}
+.ci-link {
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s;
+}
+.ci-link:hover {
+    opacity: 0.75;
+}
+.by-appt {
+    display: block;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0.5rem;
+}
+
+/* Map */
+.map-section {
+    padding: 0 0 4rem;
+}
+.map-wrapper {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+.map-address {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+    color: var(--text-body);
+}
+.map-btn {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+}
+
+/* Have Questions */
+.questions-box {
+    background: var(--teal-light);
+    border-radius: var(--radius);
+    padding: 3rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.questions-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.questions-box p {
+    color: var(--text-body);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+}
+.q-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.q-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+    .ci-grid {
+        grid-template-columns: 1fr;
+    }
+    .questions-box {
+        padding: 2rem 1.5rem;
+    }
+}

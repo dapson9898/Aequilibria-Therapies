@@ -1,4 +1,4 @@
-/* ─── Reset ─── */
+/* ─── Reset ───  */
 *,
 *::before,
 *::after {
@@ -65,9 +65,16 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    /* border: 2px solid pink; */
+    /* background-color: yellow; */
+    /* width: 100%; */
+    /* text-align: left; */
 }
 .section-pad {
     padding: 5rem 0;
+    text-align: left;
+    /* border: 5px solid red; */
+    /* background-color: red; */
 }
 .bg-light {
     background: var(--bg-light);

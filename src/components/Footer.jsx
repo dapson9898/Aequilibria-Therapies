@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4 className="heading">Quick Links</h4>
+          <h4 className="brand">Quick Links</h4>
           <ul className="links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-section">
-          <h4 className="heading">Contact Information</h4>
+          <h4 className="brand">Contact Information</h4>
           <ul className="contact">
             <li>
               <MapPin size={16} />
