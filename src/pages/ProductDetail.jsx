@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ShoppingCart, Zap, Star, ChevronLeft, Check, Package, Shield, Truck, RefreshCw } from 'lucide-react'
 import PRODUCTS from '../data/products.js'
 import { playChime } from '../hooks/useChimes.js'
+import { useCart } from '../contexts/CartContext'
 import './ProductDetail.css'
 
 const formatPrice = p => `₦${p.toLocaleString()}`
@@ -11,6 +12,7 @@ export default function ProductDetail() {
   const { id }        = useParams()
   const navigate      = useNavigate()
   const product       = PRODUCTS.find(p => p.id === id)
+  const { addToCart } = useCart()
 
   const [qty, setQty]         = useState(1)
   const [cartDone, setCartDone] = useState(false)
@@ -30,6 +32,7 @@ export default function ProductDetail() {
   const handleAddToCart = () => {
     if (!product.inStock) return
     playChime()
+    addToCart(product, qty)
     setCartDone(true)
     setTimeout(() => setCartDone(false), 2500)
   }

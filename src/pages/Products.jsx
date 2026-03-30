@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ShoppingCart, Star, Filter, Search } from 'lucide-react'
 import PRODUCTS from '../data/products.js'
 import { playChime } from '../hooks/useChimes.js'
+import { useCart } from '../contexts/CartContext'
 import './Products.css'
 
 const CATEGORIES = ['All', ...new Set(PRODUCTS.map(p => p.category))]
@@ -15,6 +16,7 @@ const Products = ()=> {
   const [sortBy, setSortBy]                 = useState('default')
   const [addedId, setAddedId]               = useState(null)
   const hoverTimer = useRef(null)
+  const { addToCart } = useCart()
 
   const filtered = PRODUCTS
     .filter(p => activeCategory === 'All' || p.category === activeCategory)
@@ -34,11 +36,12 @@ const Products = ()=> {
     clearTimeout(hoverTimer.current)
   }
 
-  const handleAddToCart = (e, id) => {
+  const handleAddToCart = (e, product) => {
     e.preventDefault()
     e.stopPropagation()
     playChime()
-    setAddedId(id)
+    addToCart(product)
+    setAddedId(product.id)
     setTimeout(() => setAddedId(null), 2000)
   }
 
@@ -141,7 +144,7 @@ const Products = ()=> {
 
                     <button
                       className={`add-to-cart-btn ${addedId === product.id ? 'added' : ''} ${!product.inStock ? 'disabled' : ''}`}
-                      onClick={e => product.inStock && handleAddToCart(e, product.id)}
+                      onClick={e => product.inStock && handleAddToCart(e, product)}
                       disabled={!product.inStock}
                     >
                       <ShoppingCart size={16} />

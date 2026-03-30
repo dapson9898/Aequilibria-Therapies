@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { ShoppingCart } from 'lucide-react'
+import { useCart } from '../contexts/CartContext'
 import './styles/Navbar.css'
 
 const links = [
@@ -15,6 +17,8 @@ const links = [
 export default function Navbar() {
   const location = useLocation()
   const [open, setOpen] = useState(false)
+  const { getCartItemCount } = useCart()
+  const cartCount = getCartItemCount()
 
   return (
     <nav className="navbar">
@@ -36,6 +40,11 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        <Link to="/cart" className="nav-cart" onClick={() => setOpen(false)} title="Shopping Cart">
+          <ShoppingCart size={20} />
+          {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+        </Link>
 
         <Link to="/book-session" className="nav-book btn-primary" onClick={() => setOpen(false)}>
           Book Now
