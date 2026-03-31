@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Leaf, Home, ArrowLeft, Search } from 'lucide-react'
-import './Notfound.css'
+import './NotFound.css'
 
 const QUICK_LINKS = [
   { to: '/services',             label: 'Our Services' },
