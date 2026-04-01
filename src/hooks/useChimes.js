@@ -15,7 +15,7 @@ export function playChime() {
     for (let i = 0; i < bytes.length; i++) buf[i] = bytes.charCodeAt(i)
 
     ctx.decodeAudioData(buf.buffer, (decoded) => {
-      const src    = ctx.createBufferSource()
+      // const src    = ctx.createBufferSource()
       const gainNd = ctx.createGain()
       gainNd.gain.value = 0.7
       src.buffer = decoded

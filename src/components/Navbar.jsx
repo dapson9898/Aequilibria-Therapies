@@ -43,7 +43,7 @@ export default function Navbar() {
 
         <Link to="/cart" className="nav-cart" onClick={() => setOpen(false)} title="Shopping Cart">
           <ShoppingCart size={20} />
-          {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+          <span className="cart-count">{cartCount}</span>
         </Link>
 
         <Link to="/book-session" className="nav-book btn-primary" onClick={() => setOpen(false)}>

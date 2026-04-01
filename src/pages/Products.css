@@ -95,7 +95,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
 /* Card */
@@ -109,7 +109,7 @@
     transition: transform 0.22s, box-shadow 0.22s;
     cursor: pointer;
     color: inherit;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 .product-card:hover {
     transform: translateY(-5px);

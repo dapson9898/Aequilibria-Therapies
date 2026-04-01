@@ -12,7 +12,7 @@ export default function ProductDetail() {
   const { id }        = useParams()
   const navigate      = useNavigate()
   const product       = PRODUCTS.find(p => p.id === id)
-  const { addToCart } = useCart()
+  const { addToCart, clearCart } = useCart()
 
   const [qty, setQty]         = useState(1)
   const [cartDone, setCartDone] = useState(false)
@@ -40,7 +40,15 @@ export default function ProductDetail() {
   const handleBuyNow = () => {
     if (!product.inStock) return
     playChime()
-    setTimeout(() => navigate('/book-session'), 300)
+    
+    const message = `Hello! I'd like to purchase:\n\n${product.name}\nQuantity: ${qty}\nPrice: ₦${(product.price * qty).toLocaleString()}\n\nPlease process my order.`
+    
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/+2347033030833?text=${encodedMessage}`
+    window.open(whatsappUrl, '_blank')
+    
+    // Clear cart after placing order
+    clearCart()
   }
 
   const discount = product.originalPrice

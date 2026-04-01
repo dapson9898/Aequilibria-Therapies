@@ -12,6 +12,19 @@ export default function Cart() {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
   const totalPrice = getCartTotal()
 
+  const handleCheckout = () => {
+    const message = `Hello! I'd like to checkout with the following items:\n\n${cart.map(item => 
+      `${item.name} (Qty: ${item.quantity}) - ₦${(item.price * item.quantity).toLocaleString()}`
+    ).join('\n')}\n\nTotal: ₦${totalPrice.toLocaleString()}\n\nPlease process my order.`
+
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/+2347033030833?text=${encodedMessage}`
+    window.open(whatsappUrl, '_blank')
+    
+    // Clear cart after placing order
+    clearCart()
+  }
+
   if (cart.length === 0) {
     return (
       <div className="cart-page">
@@ -123,7 +136,7 @@ export default function Cart() {
               </div>
 
               <div className="cart-actions">
-                <button className="btn-primary checkout-btn">
+                <button className="btn-primary checkout-btn" onClick={handleCheckout}>
                   Proceed to Checkout
                 </button>
                 <button className="btn-secondary clear-cart-btn" onClick={clearCart}>
