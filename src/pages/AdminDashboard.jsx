@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { Plus, Edit, Trash2, LogOut } from 'lucide-react'
 import './Admin.css'
 
+const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+
 export default function AdminDashboard() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -22,7 +24,7 @@ export default function AdminDashboard() {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/products')
+      const response = await fetch(`${API_BASE}/api/products`)
       if (!response.ok) throw new Error('Failed to fetch products')
       const data = await response.json()
       setProducts(data)
@@ -43,7 +45,7 @@ export default function AdminDashboard() {
 
     try {
       const token = localStorage.getItem('adminToken')
-      const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const response = await fetch(`${API_BASE}/api/products/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -178,8 +180,8 @@ function ProductForm({ product, onClose, onSuccess }) {
       const token = localStorage.getItem('adminToken')
       const method = product ? 'PUT' : 'POST'
       const url = product
-        ? `http://localhost:5000/api/products/${product.id}`
-        : 'http://localhost:5000/api/products'
+        ? `${API_BASE}/api/products/${product.id}`
+        : `${API_BASE}/api/products`
 
       const response = await fetch(url, {
         method,

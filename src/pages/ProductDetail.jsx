@@ -5,6 +5,8 @@ import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
 import './ProductDetail.css'
 
+const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+
 const formatPrice = p => `₦${p.toLocaleString()}`
 
 export default function ProductDetail() {
@@ -23,7 +25,7 @@ export default function ProductDetail() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${id}`)
+        const response = await fetch(`${API_BASE}/api/products/${id}`)
         if (!response.ok) {
           throw new Error('Product not found')
         }
@@ -31,7 +33,7 @@ export default function ProductDetail() {
         setProduct(data)
 
         // Fetch related products
-        const allResponse = await fetch('http://localhost:5000/api/products')
+        const allResponse = await fetch(`${API_BASE}/api/products`)
         const allProducts = await allResponse.json()
         const relatedProducts = allProducts.filter(p => p.category === data.category && p.id !== data.id).slice(0, 3)
         setRelated(relatedProducts)

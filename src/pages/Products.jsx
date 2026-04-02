@@ -5,6 +5,8 @@ import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
 import './Products.css'
 
+const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+
 const formatPrice = p => `₦${p.toLocaleString()}`
 
 const Products = ()=> {
@@ -21,7 +23,7 @@ const Products = ()=> {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products')
+        const response = await fetch(`${API_BASE}/api/products`)
         if (!response.ok) {
           throw new Error('Failed to fetch products')
         }
