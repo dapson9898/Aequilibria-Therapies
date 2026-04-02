@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ShoppingCart, Zap, Star, ChevronLeft, Check, Package, Shield, Truck, RefreshCw } from 'lucide-react'
-import PRODUCTS from '../data/products.js'
 import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
 import './ProductDetail.css'
@@ -9,25 +8,42 @@ import './ProductDetail.css'
 const formatPrice = p => `₦${p.toLocaleString()}`
 
 export default function ProductDetail() {
-  const { id }        = useParams()
-  const navigate      = useNavigate()
-  const product       = PRODUCTS.find(p => p.id === id)
+  const { id } = useParams()
+  const navigate = useNavigate()
   const { addToCart, clearCart } = useCart()
 
-  const [qty, setQty]         = useState(1)
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [related, setRelated] = useState([])
+  const [qty, setQty] = useState(1)
   const [cartDone, setCartDone] = useState(false)
-  const [tab, setTab]          = useState('description')
+  const [tab, setTab] = useState('description')
 
-  if (!product) {
-    return (
-      <div className="pd-not-found">
-        <h2>Product not found</h2>
-        <Link to="/products" className="btn-primary">Back to Products</Link>
-      </div>
-    )
-  }
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/api/products/${id}`)
+        if (!response.ok) {
+          throw new Error('Product not found')
+        }
+        const data = await response.json()
+        setProduct(data)
 
-  const related = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3)
+        // Fetch related products
+        const allResponse = await fetch('http://localhost:5000/api/products')
+        const allProducts = await allResponse.json()
+        const relatedProducts = allProducts.filter(p => p.category === data.category && p.id !== data.id).slice(0, 3)
+        setRelated(relatedProducts)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProduct()
+  }, [id])
 
   const handleAddToCart = () => {
     if (!product.inStock) return
@@ -51,9 +67,26 @@ export default function ProductDetail() {
     clearCart()
   }
 
-  const discount = product.originalPrice
+  const discount = product && product.originalPrice
     ? Math.round((1 - product.price / product.originalPrice) * 100)
     : null
+
+  if (loading) {
+    return (
+      <div className="pd-loading">
+        <p>Loading product...</p>
+      </div>
+    )
+  }
+
+  if (error || !product) {
+    return (
+      <div className="pd-not-found">
+        <h2>{error || 'Product not found'}</h2>
+        <Link to="/products" className="btn-primary">Back to Products</Link>
+      </div>
+    )
+  }
 
   return (
     <div className="pd-page">

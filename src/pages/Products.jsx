@@ -1,24 +1,45 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingCart, Star, Filter, Search } from 'lucide-react'
-import PRODUCTS from '../data/products.js'
 import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
 import './Products.css'
 
-const CATEGORIES = ['All', ...new Set(PRODUCTS.map(p => p.category))]
-
 const formatPrice = p => `₦${p.toLocaleString()}`
 
 const Products = ()=> {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
   const [activeCategory, setActiveCategory] = useState('All')
-  const [search, setSearch]                 = useState('')
-  const [sortBy, setSortBy]                 = useState('default')
-  const [addedId, setAddedId]               = useState(null)
+  const [search, setSearch] = useState('')
+  const [sortBy, setSortBy] = useState('default')
+  const [addedId, setAddedId] = useState(null)
   const hoverTimer = useRef(null)
   const { addToCart } = useCart()
 
-  const filtered = PRODUCTS
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/products')
+        if (!response.ok) {
+          throw new Error('Failed to fetch products')
+        }
+        const data = await response.json()
+        setProducts(data)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+
+  const categories = ['All', ...new Set(products.map(p => p.category))]
+
+  const filtered = products
     .filter(p => activeCategory === 'All' || p.category === activeCategory)
     .filter(p => p.name.toLowerCase().includes(search.toLowerCase()) ||
                  p.shortDesc.toLowerCase().includes(search.toLowerCase()))
@@ -85,7 +106,7 @@ const Products = ()=> {
 
           {/* Category Filters */}
           <div className="category-filters">
-            {CATEGORIES.map(category => (
+            {categories.map(category => (
               <button
                 key={category}
                 className={`cat-btn ${activeCategory === category ? 'active' : ''}`}
@@ -94,8 +115,23 @@ const Products = ()=> {
             ))}
           </div>
 
+          {/* Loading/Error States */}
+          {loading && (
+            <div className="loading-state">
+              <p>Loading products...</p>
+            </div>
+          )}
+          {error && (
+            <div className="error-state">
+              <p>Error loading products: {error}</p>
+              <button className="btn-primary" onClick={() => window.location.reload()}>
+                Try Again
+              </button>
+            </div>
+          )}
+
           {/* Products Grid */}
-          {filtered.length === 0 ? (
+          {!loading && !error && filtered.length === 0 ? (
             <div className="no-results">
               <p>No products found for "<strong>{search}</strong>"</p>
               <button className="btn-primary" onClick={() => { setSearch(''); setActiveCategory('All') }}>

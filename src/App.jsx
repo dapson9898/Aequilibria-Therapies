@@ -12,18 +12,22 @@ import Footer from './components/Footer'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
+import AdminLogin from './pages/AdminLogin'
+import AdminDashboard from './pages/AdminDashboard'
 import { CartProvider } from './contexts/CartContext'
 import './index.css'
 
 const App = () => {
   const location = useLocation();
-  
+
   const validRoutes = ['/', '/about', '/alternative-medicine', '/book-session', '/contact', '/services', '/products', '/cart'];
-  const isNotFound = !validRoutes.includes(location.pathname) && !location.pathname.startsWith('/products/');
-  
+  const adminRoutes = ['/admin/login', '/admin/dashboard'];
+  const isNotFound = !validRoutes.includes(location.pathname) && !location.pathname.startsWith('/products/') && !adminRoutes.includes(location.pathname);
+  const isAdminRoute = adminRoutes.includes(location.pathname);
+
   return (
     <CartProvider>
-      {!isNotFound && <Navbar/>}
+      {!isNotFound && !isAdminRoute && <Navbar/>}
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/home" element={<Navigate to="/" />}/>
@@ -35,10 +39,12 @@ const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/" element={<Home />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
-      {!isNotFound && <Footer />}
+      {!isNotFound && !isAdminRoute && <Footer />}
     </CartProvider>
   )
 }
