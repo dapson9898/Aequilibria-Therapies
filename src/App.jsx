@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/" element={<Home />}/>
+        {/* <Route path="/" element={<Home />}/> */}
         <Route path="*" element={<NotFound />}/>
       </Routes>
       {!isNotFound && !isAdminRoute && <Footer />}
