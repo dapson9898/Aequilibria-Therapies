@@ -5,6 +5,7 @@
     background: var(--white);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    width: 100%;
 }
 
 .nav-inner {
@@ -111,8 +112,20 @@
     .menu {
         display: flex;
     }
+    .nav-inner{
+        padding: .6rem;
+        gap: .5rem;
+    }
+    .nav-logo{
+        font-size: 1.2rem;
+    }
     .nav-book {
-        display: none;
+        /* display: none; */
+        /* white-space: nowrap; */
+        /* flex-shrink: 0; */
+        padding: 0.6rem 1.0rem !important;
+        font-size: 0.8rem !important;
+        margin-left: 0.1rem;
     }
     .nav-links {
         display: none;
@@ -138,5 +151,16 @@
     }
     .nav-links li:last-child a {
         border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-book {
+        /* display: none; */
+        /* white-space: nowrap; */
+        /* flex-shrink: 0; */
+        padding: 0.6rem 0.5rem !important;
+        font-size: 0.8rem !important;
+        margin-left: 0.1rem;
     }
 }
