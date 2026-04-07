@@ -42,7 +42,7 @@
     margin-left: auto;
 }
 .nav-links li a {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 0.5rem 0.4rem;
     border-radius: 6px;
     font-size: 0.92rem;
