@@ -24,6 +24,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="nav-inner">
         <Link to="/" className="nav-logo">Aequilibria Therapies</Link>
+        <div className='nav-right'>
 
         <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           <span /><span /><span />
@@ -50,6 +51,7 @@ export default function Navbar() {
           Book Now
         </Link>
       </div>
+                </div>
     </nav>
   )
 }

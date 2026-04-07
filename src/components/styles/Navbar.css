@@ -13,9 +13,17 @@
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 72px;
     gap: 1rem;
+}
+
+.nav-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
 }
 
 .nav-logo {
@@ -111,6 +119,7 @@
 @media (max-width: 960px) {
     .menu {
         display: flex;
+        /* gap: 0; */
     }
     .nav-inner{
         padding: .6rem;
@@ -154,7 +163,11 @@
     }
 }
 
+/* border: 1px solid red; */
 @media (max-width: 480px) {
+    .nav-inner{
+        padding: .6rem 0.4rem;
+    }
     .nav-book {
         /* display: none; */
         /* white-space: nowrap; */
@@ -162,5 +175,13 @@
         padding: 0.6rem 0.5rem !important;
         font-size: 0.8rem !important;
         margin-left: 0.1rem;
+    }
+    .menu{
+        /* border: 1px solid red; */
+        margin: 0;
+        padding: 4px 0;
+    }
+    .nav-inner{
+        gap: .2rem;
     }
 }
