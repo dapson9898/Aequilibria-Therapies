@@ -26,9 +26,6 @@ export default function Navbar() {
         <Link to="/" className="nav-logo">Aequilibria Therapies</Link>
         <div className='nav-right'>
 
-        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
 
         <ul className={`nav-links ${open ? 'open' : ''}`}>
           {links.map(l => (
@@ -46,12 +43,15 @@ export default function Navbar() {
           <ShoppingCart size={20} />
           <span className="cart-count">{cartCount}</span>
         </Link>
+        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
 
         <Link to="/book-session" className="nav-book btn-primary" onClick={() => setOpen(false)}>
           Book Now
         </Link>
       </div>
-                </div>
+      </div>
     </nav>
   )
 }

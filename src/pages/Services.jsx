@@ -46,6 +46,13 @@ const SERVICES = [
     expect: "Initial sessions map your mental and emotional landscape. Ongoing 45–60 minute sessions teach practical daily tools. Progress is gentle and tailored to your comfort.",
     btn: 'Book Mind Healing Session',
   },
+  {
+    icon: <Leaf size={26} />, title: 'Cupping', subtitle: 'Ancient Suction Therapy for Deep Healing',
+    img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80', flip: true,
+    desc: "Cupping therapy is an ancient healing practice originating from Chinese medicine. Special cups are placed on your skin and create a gentle suction that draws out stagnant blood, toxins, and tension from deep within the muscles and tissues. This stimulates blood flow, releases blockages in energy meridians, and accelerates your body's natural healing processes. Highly effective for pain relief, muscle recovery, detoxification, and rejuvenation.",
+    expect: "Sessions last 30–45 minutes. We'll apply oils to your skin, then place warm or bamboo cups. You may feel a pleasant pulling sensation as the cups work. Some temporary circular marks may appear, which fade within days.",
+    btn: 'Book Cupping Session',
+  }
 ]
 
 const FAQS = [
