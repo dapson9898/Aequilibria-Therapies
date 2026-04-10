@@ -38,14 +38,14 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
 
         <Link to="/cart" className="nav-cart" onClick={() => setOpen(false)} title="Shopping Cart">
           <ShoppingCart size={20} />
           <span className="cart-count">{cartCount}</span>
         </Link>
-        <button className="menu" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
 
         <Link to="/book-session" className="nav-book btn-primary" onClick={() => setOpen(false)}>
           Book Now
