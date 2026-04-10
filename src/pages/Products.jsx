@@ -1,43 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingCart, Star, Filter, Search } from 'lucide-react'
 import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
+import { useProducts } from '../contexts/ProductsContext'
 import './Products.css'
-
-const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
 
 const formatPrice = p => `₦${p.toLocaleString()}`
 
 const Products = ()=> {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const { products, loadingProducts, productsError, refreshProducts } = useProducts()
   const [activeCategory, setActiveCategory] = useState('All')
   const [search, setSearch] = useState('')
   const [sortBy, setSortBy] = useState('default')
   const [addedId, setAddedId] = useState(null)
   const hoverTimer = useRef(null)
   const { addToCart } = useCart()
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(`${API_BASE}/api/products`)
-        if (!response.ok) {
-          throw new Error('Failed to fetch products')
-        }
-        const data = await response.json()
-        setProducts(data)
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchProducts()
-  }, [])
 
   const categories = ['All', ...new Set(products.map(p => p.category))]
 
@@ -118,22 +96,22 @@ const Products = ()=> {
           </div>
 
           {/* Loading/Error States */}
-          {loading && (
+          {loadingProducts && (
             <div className="loading-state">
               <p>Loading products...</p>
             </div>
           )}
-          {error && (
+          {productsError && (
             <div className="error-state">
-              <p>Error loading products: {error}</p>
-              <button className="btn-primary" onClick={() => window.location.reload()}>
-                Try Again
+              <p>Error loading products: {productsError}</p>
+              <button className="btn-primary" onClick={refreshProducts}>
+                Retry Loading
               </button>
             </div>
           )}
 
           {/* Products Grid */}
-          {!loading && !error && filtered.length === 0 ? (
+          {!loadingProducts && !productsError && filtered.length === 0 ? (
             <div className="no-results">
               <p>No products found for "<strong>{search}</strong>"</p>
               <button className="btn-primary" onClick={() => { setSearch(''); setActiveCategory('All') }}>

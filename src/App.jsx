@@ -15,6 +15,7 @@ import Cart from './pages/Cart'
 import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
 import { CartProvider } from './contexts/CartContext'
+import { ProductsProvider } from './contexts/ProductsContext'
 import './index.css'
 
 const App = () => {
@@ -26,27 +27,28 @@ const App = () => {
   const isAdminRoute = adminRoutes.includes(location.pathname);
 
   return (
-    <CartProvider>
-      {!isNotFound && !isAdminRoute && <Navbar/>}
-      <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/home" element={<Navigate to="/" />}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/alternative-medicine" element={<AlternativeMedicine />}/>
-        <Route path="/book-session" element={<BookSession />}/>
-        <Route path="/contact" element={<Contact />}/>
-        <Route path="/services" element={<Services />}/>
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/admin/*" element={<AdminLogin />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        {/* <Route path="/" element={<Home />}/> */}
-        <Route path="*" element={<NotFound />}/>
-      </Routes>
-      {!isNotFound && !isAdminRoute && <Footer />}
-    </CartProvider>
+    <ProductsProvider>
+      <CartProvider>
+        {!isNotFound && !isAdminRoute && <Navbar/>}
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/home" element={<Navigate to="/" />}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/alternative-medicine" element={<AlternativeMedicine />}/>
+          <Route path="/book-session" element={<BookSession />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="/services" element={<Services />}/>
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/admin/*" element={<AdminLogin />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+        {!isNotFound && !isAdminRoute && <Footer />}
+      </CartProvider>
+    </ProductsProvider>
   )
 }
 
