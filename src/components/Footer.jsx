@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/Footer.css'
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube, Music2 } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -15,9 +15,46 @@ export default function Footer() {
             and promoting natural wellness through holistic healing.
           </p>
           <div className="socials">
-            <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-            <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
+            <a
+              href="https://www.facebook.com/share/18Ge1Ea6m1/"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Facebook @pharmfeez"
+              className="social-link"
+            >
+              <Facebook size={18} />
+              <span>@pharmfeez</span>
+            </a>
+            <a
+              href="https://www.instagram.com/pharmfeez?igsh=MWk4bHBhMnQ4Z2JtNQ=="
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Instagram @pharmfeez"
+              className="social-link"
+            >
+              <Instagram size={18} />
+              <span>@pharmfeez</span>
+            </a>
+            <a
+              href="https://youtube.com/@pharmfeez?si=6WfLLoyjewxEf2yJ"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="YouTube @pharmfeez"
+              className="social-link"
+            >
+              <Youtube size={18} />
+              <span>@pharmfeez</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/@pharmfeez?_r=1&_t=ZS-95L7sOdZWTf"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="TikTok @pharmfeez"
+              className="social-link"
+            >
+              <Music2 size={18} />
+              <span>@pharmfeez</span>
+            </a>
           </div>
         </div>
 
@@ -43,10 +80,11 @@ export default function Footer() {
             <li>
               <Phone size={16} />
               <span>+234 703 303 0833</span>
+              <span>+234 703 303 0833</span>
             </li>
             <li>
               <Mail size={16} />
-              <span>oladuntoyeabdulafeez@gmail.com</span>
+              <span>Aequilibriatherapies@gmail.com</span>
             </li>
             <li>
               <Clock size={16} />

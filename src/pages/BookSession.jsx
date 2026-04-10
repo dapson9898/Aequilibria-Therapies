@@ -72,12 +72,12 @@ const BookSession = () => {
                 </Field>
 
                 <h3 className="f-section">Appointment Details</h3>
-                <Field label="Preferred Service" req>
+                {/* <Field label="Preferred Service" req>
                   <select name="service" value={form.service} onChange={handleChange} required>
                     <option value="">Select a service</option>
                     {['Acupuncture','Naturopathy','Bioresonance Therapy','Massage Therapy','Breathwork','Mind Healing'].map(o => <option key={o}>{o}</option>)}
                   </select>
-                </Field>
+                </Field> */}
                 <div className="f-row">
                   <Field label="Preferred Date" req><input type="date" name="preferredDate" value={form.preferredDate} onChange={handleChange} required /></Field>
                   <Field label="Preferred Time" req>
@@ -87,7 +87,7 @@ const BookSession = () => {
                     </select>
                   </Field>
                 </div>
-                <div className="f-row">
+                {/* <div className="f-row">
                   <Field label="Alternative Date (Optional)"><input type="date" name="altDate" value={form.altDate} onChange={handleChange} /></Field>
                   <Field label="Alternative Time (Optional)">
                     <select name="altTime" value={form.altTime} onChange={handleChange}>
@@ -95,7 +95,7 @@ const BookSession = () => {
                       {TIMES.map(t => <option key={t}>{t}</option>)}
                     </select>
                   </Field>
-                </div>
+                </div> */}
 
                 <h3 className="f-section">Health Information</h3>
                 <Field label="Chief Complaint / Reason for Visit" req>
@@ -149,8 +149,8 @@ const BookSession = () => {
             <div className="sidebar-card">
               <h3>Contact Us</h3>
               <div className="contact-rows">
-                <div className="c-row"><Phone size={17} color="var(--teal)" /><div><span>Call us</span><strong>+234 703 303 0833</strong></div></div>
-                <div className="c-row"><Mail  size={17} color="var(--teal)" /><div><span>Email us</span><strong>oladuntoyeabdulafeez@gmail.com</strong></div></div>
+                <div className="c-row"><Phone size={17} color="var(--teal)" /><div><span>Call us</span><strong>+234 703 303 0833</strong><strong>+234 703 303 0833</strong></div></div>
+                <div className="c-row"><Mail  size={17} color="var(--teal)" /><div><span>Email us</span><strong>Aequilibritherapies@gmail.com</strong></div></div>
                 <div className="c-row">
                   <Clock size={17} color="var(--teal)" />
                   <div>

@@ -200,7 +200,7 @@
     font-size: 0.87rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1060px) {
     .book-layout {
         grid-template-columns: 1fr;
     }

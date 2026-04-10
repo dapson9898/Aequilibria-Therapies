@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 const About = () => {
   const DIFFERENCE = [
     { icon: <Shield size={22} />, title: 'Licensed Medical Company', desc: 'We are a fully licensed and certified alternative medicine facility, ensuring the highest standards of safety and professionalism in all our treatments.' },
-    { icon: <Target size={22} />, title: 'Comprehensive Approach', desc: 'Six integrated healing modalities under one roof – acupuncture, naturopathy, bioresonance, massage, breathwork, and mind healing – for complete wellness.' },
+    { icon: <Target size={22} />, title: 'Comprehensive Approach', desc: 'Seven integrated healing modalities under one roof – acupuncture, cupping, naturopathy, bioresonance, massage, breathwork, and mind healing – for complete wellness.' },
     { icon: <Heart size={22} />, title: 'Personalized Care', desc: 'Every treatment plan is customized to your unique health profile, concerns, and goals. We see you as an individual, not a condition.' },
     { icon: <Users size={22} />, title: 'Experienced Practitioners', desc: 'Our team consists of highly trained and certified professionals with years of experience in holistic and alternative medicine practices.' },
-    { icon: <Award size={22} />, title: 'Alternative Medicine Focus', desc: "We specialise exclusively in natural, non-invasive healing methods that work with your body's innate ability to heal itself." },
+    { icon: <Award size={22} />, title: 'Alternative Medicine Focus', desc: "We specialise exclusively in natural, healing methods that work with your body's innate ability to heal itself." },
     { icon: <TrendingUp size={22} />, title: 'Results-Driven', desc: 'Our evidence-based approach consistently delivers measurable improvements in pain relief, stress management, and overall wellbeing.' },
     { icon: <MapPin size={22} />, title: 'Convenient Location', desc: 'Easily accessible in Galadimawa, Abuja, providing a serene environment perfect for healing and relaxation.' },
     { icon: <Clock size={22} />, title: 'By Appointment Only', desc: 'We schedule appointments to ensure each patient receives our full attention and personalised care without rushed consultations.' },
@@ -83,7 +83,7 @@ const About = () => {
           </div>
           <div className="cred-grid">
             <div className="cred-card cred-teal"><span className="cred-num">10+</span><span>Years Combined Experience</span></div>
-            <div className="cred-card cred-gold"><span className="cred-num">6</span><span>Specialized Healing Modalities</span></div>
+            <div className="cred-card cred-gold"><span className="cred-num">7</span><span>Specialized Healing Modalities</span></div>
             <div className="cred-card cred-teal"><span className="cred-num">100%</span><span>Licensed &amp; Certified</span></div>
           </div>
         </div>

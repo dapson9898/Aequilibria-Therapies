@@ -74,7 +74,7 @@
     border-radius: 8px;
     color: var(--text-dark);
     transition: all 0.2s;
-    margin-left: 0.5rem;
+    /* margin-left: 0.5rem; */
 }
 
 .nav-cart:hover {
@@ -105,7 +105,8 @@
     gap: 5px;
     background: none;
     border: none;
-    margin-left: auto;
+    margin-left: 10px;
+    margin-right: auto;
     padding: 4px;
     cursor: pointer;
 }
