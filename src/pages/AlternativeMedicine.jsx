@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import {
   Leaf, Target, Shield, Heart, Sparkles, Users, TrendingUp,
   Activity, Brain, Utensils, Wind, Zap, HeartPulse,
-  Star, MapPin, Clock, ChevronDown, ChevronUp,
+  Star, MapPin, Clock, ChevronDown, ChevronUp, TruckElectric 
 } from 'lucide-react'
 
 const REASONS = [
@@ -39,6 +39,7 @@ const WHY_BEST = [
   { icon: <Activity size={22} />, title: 'Ongoing Support', desc: 'Continuous monitoring and adjustment of your treatment plan to ensure optimal results.' },
   { icon: <MapPin size={22} />, title: 'Accessible Location', desc: 'Conveniently located in Abuja with flexible scheduling to fit your lifestyle.' },
   { icon: <Clock size={22} />, title: 'Transparent Communication', desc: 'Clear explanations of treatments, realistic expectations, and honest guidance every step.' },
+  { icon: <TruckElectric size={22} />, title: 'Home Delivery', desc: 'Professional therapeutic services brought right to your doorstep.' },
 ]
 
 const FAQS = [
@@ -71,7 +72,7 @@ const AlternativeMedicine = () => {
             <p>Today, alternative medicine is increasingly recognised globally, with millions seeking these natural, gentle, and effective approaches to health and healing.</p>
           </div>
           <div className="what-img">
-            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Alternative Medicine yoga" />
+            <img src="https://res.cloudinary.com/dwa4bjuio/image/upload/v1776324337/Acupuncture_ileb9b.jpg" alt="Alternative Medicine yoga" />
           </div>
         </div>
       </section>

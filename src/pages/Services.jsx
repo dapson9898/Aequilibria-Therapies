@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Services.css'
-import { Droplets, Leaf, Activity, Hand, Wind, Brain, ChevronDown, ChevronUp } from 'lucide-react'
+import { Droplets, Leaf, Activity, Hand, Wind, Brain, ChevronDown, ChevronUp, Coffee  } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const SERVICES = [
@@ -12,7 +12,7 @@ const SERVICES = [
     btn: 'Book Acupuncture Session',
   },
   {
-    icon: <Leaf size={26} />, title: 'Cupping', subtitle: 'Ancient Suction Therapy for Deep Healing',
+    icon: <Coffee size={26} />, title: 'Cupping', subtitle: 'Ancient Suction Therapy for Deep Healing',
     img: 'https://res.cloudinary.com/dwa4bjuio/image/upload/f_auto,q_auto/Hijama-wet-cupping-for-organ-detoxification-and_g4nigq', flip: true,
     desc: "Cupping therapy is an ancient healing practice originating from Chinese medicine. Special cups are placed on your skin and create a gentle suction that draws out stagnant blood, toxins, and tension from deep within the muscles and tissues. This stimulates blood flow, releases blockages in energy meridians, and accelerates your body's natural healing processes. Highly effective for pain relief, muscle recovery, detoxification, and rejuvenation.",
     expect: "Sessions last 30–45 minutes. We'll apply oils to your skin, then place specialized cups. You may feel a pleasant pulling sensation as the cups work. Some temporary circular marks may appear, which fade within days.",
@@ -27,7 +27,7 @@ const SERVICES = [
   },
   {
     icon: <Activity size={26} />, title: 'Bioresonance Therapy', subtitle: "Harmonize Your Body's Frequencies",
-    img: 'https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?w=600&q=80', flip: true,
+    img: 'https://res.cloudinary.com/dwa4bjuio/image/upload/v1776321415/Metatron-Hunter-NLS-4025-for-Sale-4_hfrkmd.webp', flip: true,
     desc: "Bioresonance therapy is the cutting edge of energy medicine. This non-invasive technology works at the cellular level by detecting and correcting electromagnetic frequency imbalances that arise from toxins, stress, or illness. It supports detoxification, immune strength, and cellular regeneration.",
     expect: "Sessions last 60–90 minutes. You'll be connected to the device via electrodes while it analyses and harmonises your body's frequencies. Many feel immediate improvements.",
     btn: 'Book Bioresonance Session',

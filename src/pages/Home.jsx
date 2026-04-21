@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Droplets, Leaf, Activity, Hand, Wind, Brain,
-  Award, Heart, Users, TrendingUp,
+  Award, Heart, Users, TrendingUp, Coffee
 } from 'lucide-react'
 import './Home.css'
 
 const SERVICES = [
   { icon: <Droplets size={24} />, title: 'Acupuncture', desc: 'Traditional Chinese medicine using fine needles to promote natural healing and pain relief.' },
+  { icon: <Coffee size={24} />, title: 'Cupping', desc: "Cupping therapy is an ancient healing practice originating from Chinese medicine." },
   { icon: <Leaf size={24} />, title: 'Naturopathy', desc: 'Natural healing through herbs, nutrition, and lifestyle modifications for optimal wellness.' },
   { icon: <Activity size={24} />, title: 'Bioresonance Therapy', desc: 'Advanced technology to detect and correct energetic imbalances in the body.' },
   { icon: <Hand size={24} />, title: 'Massage Therapy', desc: 'Therapeutic massage for stress relief, pain management, and improved circulation.' },
@@ -57,7 +58,7 @@ export default function Home() {
           </div>
           <div className="welcome-img">
             <img
-              src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=700&q=80"
+              src="https://res.cloudinary.com/dwa4bjuio/image/upload/v1776329070/1744133866726x970357222796001300-feature_eny33r.jpg"
               alt="Group yoga on the beach"
             />
           </div>

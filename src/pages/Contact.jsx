@@ -42,8 +42,8 @@ const Contact = () => {
               <div className="ci-icon"><Mail size={22} /></div>
               <div>
                 <h3>Email</h3>
-                <p>oladuntoyeabdulafeez@gmail.com</p>
-                <a href="mailto:oladuntoyeabdulafeez@gmail.com" target='_blank' className="ci-link">Send Email →</a>
+                <p>aequilibriatherapies@gmail.com</p>
+                <a href="mailto:Aequilibriatherapies@gmail.com" target='_blank' className="ci-link">Send Email →</a>
               </div>
             </div>
             <div className="ci-card">
