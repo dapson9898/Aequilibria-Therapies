@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { CheckCircle, Phone, Mail, Clock, MapPin } from 'lucide-react'
 import './BookSession.css'
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mnjwnzlr'
+
 const TIMES = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM']
 
 const initForm = {
@@ -24,11 +26,69 @@ function Field({ label, req, children }) {
 const BookSession = () => {
   const [form, setForm]       = useState(initForm)
   const [submitted, setSubmit] = useState(false)
+  const [loading, setLoading]   = useState(false)
+  const [error, setError]       = useState(null)
 
   const handleChange = ({ target: { name, value, type, checked } }) =>
     setForm(p => ({ ...p, [name]: type === 'checkbox' ? checked : value }))
 
-  const handleSubmit = e => { e.preventDefault(); setSubmit(true) }
+  const handleSubmit = async(e) => { 
+    e.preventDefault();
+    setSubmit(true) 
+    setLoading(true)
+    setError(null)
+
+    try{
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          // ── Personal Info ──
+          'Full Name':          form.fullName,
+          'Email':              form.email,
+          'Phone':              form.phone,
+          'Age':                form.age       || 'Not provided',
+          'Gender':             form.gender    || 'Not provided',
+ 
+          // ── Appointment ──
+          'Preferred Date':     form.preferredDate,
+          'Preferred Time':     form.preferredTime,
+ 
+          // ── Health Info ──
+          'Chief Complaint':         form.complaint,
+          'Current Medications':     form.medications        || 'None',
+          'Known Allergies':         form.allergies          || 'None',
+          'Previous Treatments':     form.previousTreatments || 'None',
+          'How They Heard About Us': form.hearAboutUs        || 'Not specified',
+          'Special Requests':        form.specialRequests    || 'None',
+ 
+          // ── Consents ──
+          'Agreed to Terms':         form.agreeTerms    ? 'Yes' : 'No',
+          'Consented to Contact':    form.agreeContact  ? 'Yes' : 'No',
+ 
+          // Formspree uses _replyto to set reply-to on the email
+          _replyto: form.email,
+          _subject: `New Consultation Request from ${form.fullName}`,
+        }),
+      })
+ 
+      if (response.ok) {
+        setSubmit(true)
+        setForm(initForm)
+      } else {
+        const data = await response.json()
+        setError(data?.errors?.[0]?.message || 'Something went wrong. Please try again.')
+      }
+    }
+    catch (err){
+    setError('Network error. Please check your connection and try again.')
+    } finally {
+      setLoading(false)
+  }
+  }
 
   return (
     <div>
