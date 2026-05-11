@@ -95,7 +95,7 @@ const BookSession = () => {
       <section className="page-hero book-hero">
         <div className="page-hero-content">
           <h1>Begin Your Healing Journey</h1>
-          <p>Schedule your consultation with our holistic wellness experts</p>
+          <p>Schedule your consultation with my holistic wellness experts</p>
         </div>
       </section>
 
@@ -127,7 +127,7 @@ const BookSession = () => {
                 <Field label="Gender">
                   <select name="gender" value={form.gender} onChange={handleChange}>
                     <option value="">Select gender</option>
-                    {['Male','Female','Other','Prefer not to say'].map(o => <option key={o}>{o}</option>)}
+                    {['Male','Female'].map(o => <option key={o}>{o}</option>)}
                   </select>
                 </Field>
 
@@ -210,7 +210,7 @@ const BookSession = () => {
               <h3>Contact Us</h3>
               <div className="contact-rows">
                 <div className="c-row"><Phone size={17} color="var(--teal)" /><div><span>Call us</span><strong>+234 703 303 0833</strong><strong>+234 703 303 0833</strong></div></div>
-                <div className="c-row"><Mail  size={17} color="var(--teal)" /><div><span>Email us</span><strong>Aequilibritherapies@gmail.com</strong></div></div>
+                <div className="c-row"><Mail  size={17} color="var(--teal)" /><div><span>Email us</span><strong>Aequilibriatherapies@gmail.com</strong></div></div>
                 <div className="c-row">
                   <Clock size={17} color="var(--teal)" />
                   <div>

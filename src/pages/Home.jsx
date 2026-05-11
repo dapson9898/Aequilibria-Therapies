@@ -52,9 +52,11 @@ export default function Home() {
         <div className="container welcome-grid">
           <div className="welcome-text">
             <h2>Welcome to Aequilibria Therapies</h2>
-            <p>Where ancient wisdom meets modern healing. We are a licensed medical company specialising in comprehensive holistic treatments designed to restore balance and promote natural wellness.</p>
-            <p>Our integrated approach combines six powerful healing modalities to address the root causes of health concerns, not just symptoms. Whether you're seeking pain relief, stress management, or overall wellness enhancement, our experienced practitioners are here to guide your healing journey.</p>
-            <p>Experience the difference of personalised, compassionate care in a serene, professional environment.</p>
+            <p>What if your body already knows how to heal it just needs the right conditions?</p>
+            <p>I'm a licensed holistic therapist blending ancient healing traditions with modern therapeutic practice. </p>
+            <p>At Aequilibria, I work with seven complementary modalities to get to the root of what's holding your body back not just mask what's on the surface.</p>
+            <p>Whether you're dealing with chronic pain, burnout, or simply a feeling that something's off, I'll work with you to find what your body actually needs.</p>
+            <p>This is personalised care and your healing journey starts here.</p>
           </div>
           <div className="welcome-img">
             <img
@@ -69,7 +71,7 @@ export default function Home() {
       <section className="section-pad bg-light">
         <div className="container">
           <div className="section-header text-center">
-            <h2 className="section-title">Our Healing Services</h2>
+            <h2 className="section-title">My Healing Services</h2>
             <p className="section-subtitle">Comprehensive holistic therapies tailored to your unique wellness needs</p>
           </div>
           <div className="services-grid">
@@ -110,7 +112,7 @@ export default function Home() {
       <section className="section-pad bg-light">
         <div className="container">
           <div className="section-header text-center">
-            <h2 className="section-title">What Our Patients Say</h2>
+            <h2 className="section-title">What My Patients Say</h2>
             <p className="section-subtitle">Real stories of healing and transformation</p>
           </div>
           <div className="testimonial-card">

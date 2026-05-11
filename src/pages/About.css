@@ -20,6 +20,9 @@
     font-size: 2rem;
     margin-bottom: 1.25rem;
 }
+/* .story-text pre{
+    color: red;
+} */
 .story-text p {
     color: var(--text-body);
     line-height: 1.8;

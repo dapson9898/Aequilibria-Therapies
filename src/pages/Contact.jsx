@@ -10,7 +10,7 @@ const Contact = () => {
       <section className="page-hero contact-hero">
         <div className="page-hero-content">
           <h1>Get in Touch</h1>
-          <p>We're Here to Help You</p>
+          <p>I'm Here to Help You</p>
         </div>
       </section>
 
@@ -19,13 +19,13 @@ const Contact = () => {
         <div className="container">
           <div className="section-header text-center">
             <h2 className="section-title">Contact Information</h2>
-            <p className="section-subtitle">Reach out to us for appointments, questions, or general inquiries</p>
+            <p className="section-subtitle">Reach out to me for appointments, questions, or general inquiries</p>
           </div>
           <div className="ci-grid">
             <div className="ci-card">
               <div className="ci-icon"><MapPin size={22} /></div>
               <div>
-                <h3>Our Location</h3>
+                <h3>My Location</h3>
                 <p>Maccido Royal Estate, Galadimawa, Abuja, Nigeria</p>
                 <a href="https://maps.google.com/?q=Galadimawa+Abuja+Nigeria" target="_blank" rel="noreferrer" className="ci-link">Get Directions →</a>
               </div>
@@ -64,7 +64,7 @@ const Contact = () => {
       {/* Map */}
       <section className="map-section">
         <div className="container">
-          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>Find Us on the Map</h2>
+          <h2 className="section-title text-center" style={{ marginBottom: '2rem' }}>Find Me on the Map</h2>
           <div className="map-wrapper">
             <iframe
               title="Aequilibria Therapies Location"
@@ -77,8 +77,7 @@ const Contact = () => {
             <a
               href="https://www.google.com/maps/search/Maccido+Royal+Estate+Galadimawa+Abuja"
               target="_blank" rel="noreferrer"
-              className="btn-primary map-btn"
-            >
+              className="btn-primary map-btn">
               Open in Google Maps
             </a>
           </div>
@@ -90,7 +89,7 @@ const Contact = () => {
         <div className="container">
           <div className="questions-box">
             <h2>Have Questions?</h2>
-            <p>We're here to answer any questions you may have about our services, treatments, or scheduling. Don't hesitate to reach out via phone, email, or visit us in person.</p>
+            <p>I'm here to answer any questions you may have about our services, treatments, or scheduling. Don't hesitate to reach out via phone, email, or visit us in person.</p>
             <div className="q-btns">
               <a href="tel:+2347033030833" className="btn-primary q-btn"><Phone size={16} /> Call Us Now</a>
               <a href="mailto:oladuntoyeabdulafeez@gmail.com" className="btn-outline-teal q-btn"><Mail size={16} /> Email Us</a>

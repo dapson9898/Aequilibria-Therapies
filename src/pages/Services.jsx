@@ -21,7 +21,7 @@ const SERVICES = [
   {
     icon: <Leaf size={26} />, title: 'Naturopathy', subtitle: "Nature's Path to Wellness",
     img: 'https://res.cloudinary.com/dwa4bjuio/image/upload/f_auto,q_auto/Fotolia_35154311_M_owsst3', flip: false,
-    desc: "Naturopathy embraces the healing power of nature. Our approach combines herbal medicine, nutritional counselling, lifestyle modifications, and natural supplements to address the root causes of illness. We believe your body has an innate ability to heal when given the right support.",
+    desc: "Naturopathy embraces the healing power of nature. My approach combines herbal medicine, nutritional counselling, lifestyle modifications, and natural supplements to address the root causes of illness. We believe your body has an innate ability to heal when given the right support.",
     expect: "Initial consultations last 60–90 minutes. We review your history, lifestyle, diet, and goals to create a customised natural healing protocol.",
     btn: 'Book Naturopathy Session',
   },
@@ -35,7 +35,7 @@ const SERVICES = [
   {
     icon: <Hand size={26} />, title: 'Massage Therapy', subtitle: 'Release Tension, Restore Balance',
     img: 'https://res.cloudinary.com/dwa4bjuio/image/upload/f_auto,q_auto/deep-tissue-massage-feat_vb8tal', flip: false,
-    desc: "Our therapeutic massage goes beyond relaxation. We employ Swedish massage, deep tissue work, trigger point therapy, and reflexology to address your specific needs. Scientifically proven to reduce stress hormones, relieve muscle tension, improve circulation, and promote better sleep.",
+    desc: "My therapeutic massage goes beyond relaxation. I employ Swedish massage, deep tissue work, trigger point therapy, and reflexology to address your specific needs. Scientifically proven to reduce stress hormones, relieve muscle tension, improve circulation, and promote better sleep.",
     expect: "Sessions last 60 or 90 minutes in our tranquil treatment rooms. We discuss areas of concern beforehand. You'll leave feeling renewed and restored.",
     btn: 'Book Massage Therapy Session',
   },
@@ -49,7 +49,7 @@ const SERVICES = [
   {
     icon: <Brain size={26} />, title: 'Mind Healing', subtitle: 'Mental Clarity, Emotional Freedom',
     img: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&q=80', flip: false,
-    desc: "True wellness requires mental and emotional balance. Our mind healing programmes integrate meditation, guided visualisation, mindfulness, and cognitive techniques to address anxiety, depression, trauma, and negative thought patterns. We create a safe space for you to cultivate lasting mental wellness.",
+    desc: "True wellness requires mental and emotional balance. My mind healing programmes integrate meditation, guided visualisation, mindfulness, and cognitive techniques to address anxiety, depression, trauma, and negative thought patterns. I create a safe space for you to cultivate lasting mental wellness.",
     expect: "Initial sessions map your mental and emotional landscape. Ongoing 45–60 minute sessions teach practical daily tools. Progress is gentle and tailored to your comfort.",
     btn: 'Book Mind Healing Session',
   },
@@ -82,8 +82,8 @@ const Services = () => {
       {/* Intro */}
       <section className="section-pad">
         <div className="container text-center">
-          <h2 className="section-title">Our Healing Services</h2>
-          <p className="section-subtitle">Six powerful modalities integrated for your complete wellness</p>
+          <h2 className="section-title">My Healing Services</h2>
+          <p className="section-subtitle">Seven powerful modalities integrated for your complete wellness</p>
         </div>
       </section>
 
@@ -118,10 +118,10 @@ const Services = () => {
         <div className="container">
           <div className="section-header text-center">
             <h2 className="section-title">Integrated Care for Complete Wellness</h2>
-            <p className="section-subtitle">Our holistic approach treats the whole person, not just symptoms</p>
+            <p className="section-subtitle">My holistic approach treats the whole person, not just symptoms</p>
           </div>
           <div className="integrated-card">
-            <p>At Aequilibria Therapies we understand that true healing requires addressing all aspects of your being. That's why we offer seven complementary healing modalities that work synergistically to restore balance and vitality.</p>
+            <p>At Aequilibria Therapies I understand that true healing requires addressing all aspects of your being. That's why we offer seven complementary healing modalities that work synergistically to restore balance and vitality.</p>
             <p>During your initial consultation we'll assess your complete health picture and recommend a personalised treatment plan that may combine multiple therapies for optimal results.</p>
             <p>This integrated approach allows us to address root causes while supporting your body's natural healing mechanisms from multiple angles, leading to faster, more lasting results.</p>
           </div>
@@ -133,7 +133,7 @@ const Services = () => {
         <div className="container">
           <div className="section-header text-center">
             <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="section-subtitle">Everything you need to know about our services</p>
+            <p className="section-subtitle">Everything you need to know about my services</p>
           </div>
           <div className="faq-list">
             {FAQS.map((faq, index) => (
