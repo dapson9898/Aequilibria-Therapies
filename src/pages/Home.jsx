@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import {
-  Droplets, Leaf, Activity, Hand, Wind, Brain,
-  Award, Heart, Users, TrendingUp, Coffee
-} from 'lucide-react'
+import { Droplets, Leaf, Activity, Hand, Wind, Brain, Award, Heart, Users, TrendingUp, Coffee } from 'lucide-react'
 import './Home.css'
 
 const SERVICES = [

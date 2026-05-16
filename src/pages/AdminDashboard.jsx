@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { Plus, Edit, Trash2, LogOut } from 'lucide-react'
 import './Admin.css'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+// const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.vercel.app'
 
 export default function AdminDashboard() {
   const [products, setProducts] = useState([])

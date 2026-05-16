@@ -47,27 +47,27 @@ const BookSession = () => {
         },
         body: JSON.stringify({
           // ── Personal Info ──
-          'Full Name':          form.fullName,
-          'Email':              form.email,
-          'Phone':              form.phone,
-          'Age':                form.age       || 'Not provided',
-          'Gender':             form.gender    || 'Not provided',
+          'Full Name': form.fullName,
+          'Email': form.email,
+          'Phone': form.phone,
+          'Age': form.age || 'Not provided',
+          'Gender': form.gender || 'Not provided',
  
           // ── Appointment ──
-          'Preferred Date':     form.preferredDate,
-          'Preferred Time':     form.preferredTime,
+          'Preferred Date': form.preferredDate,
+          'Preferred Time': form.preferredTime,
  
           // ── Health Info ──
-          'Chief Complaint':         form.complaint,
-          'Current Medications':     form.medications        || 'None',
-          'Known Allergies':         form.allergies          || 'None',
-          'Previous Treatments':     form.previousTreatments || 'None',
-          'How They Heard About Us': form.hearAboutUs        || 'Not specified',
-          'Special Requests':        form.specialRequests    || 'None',
+          'Chief Complaint': form.complaint,
+          'Current Medications': form.medications || 'None',
+          'Known Allergies': form.allergies || 'None',
+          'Previous Treatments': form.previousTreatments || 'None',
+          'How They Heard About Us': form.hearAboutUs || 'Not specified',
+          'Special Requests': form.specialRequests || 'None',
  
           // ── Consents ──
-          'Agreed to Terms':         form.agreeTerms    ? 'Yes' : 'No',
-          'Consented to Contact':    form.agreeContact  ? 'Yes' : 'No',
+          'Agreed to Terms': form.agreeTerms ? 'Yes' : 'No',
+          'Consented to Contact': form.agreeContact ? 'Yes' : 'No',
  
           // Formspree uses _replyto to set reply-to on the email
           _replyto: form.email,
@@ -132,12 +132,6 @@ const BookSession = () => {
                 </Field>
 
                 <h3 className="f-section">Appointment Details</h3>
-                {/* <Field label="Preferred Service" req>
-                  <select name="service" value={form.service} onChange={handleChange} required>
-                    <option value="">Select a service</option>
-                    {['Acupuncture','Naturopathy','Bioresonance Therapy','Massage Therapy','Breathwork','Mind Healing'].map(o => <option key={o}>{o}</option>)}
-                  </select>
-                </Field> */}
                 <div className="f-row">
                   <Field label="Preferred Date" req><input type="date" name="preferredDate" value={form.preferredDate} onChange={handleChange} required /></Field>
                   <Field label="Preferred Time" req>
@@ -147,15 +141,6 @@ const BookSession = () => {
                     </select>
                   </Field>
                 </div>
-                {/* <div className="f-row">
-                  <Field label="Alternative Date (Optional)"><input type="date" name="altDate" value={form.altDate} onChange={handleChange} /></Field>
-                  <Field label="Alternative Time (Optional)">
-                    <select name="altTime" value={form.altTime} onChange={handleChange}>
-                      <option value="">Select time</option>
-                      {TIMES.map(t => <option key={t}>{t}</option>)}
-                    </select>
-                  </Field>
-                </div> */}
 
                 <h3 className="f-section">Health Information</h3>
                 <Field label="Chief Complaint / Reason for Visit" req>
@@ -195,9 +180,9 @@ const BookSession = () => {
             <div className="sidebar-card">
               <h3>What to Expect</h3>
               {[
-                { title:'Quick Response',  desc:"We'll contact you within 24 hours to confirm your appointment" },
-                { title:'Consultation',    desc:'Comprehensive assessment of your health and wellness needs' },
-                { title:'Treatment Plan',  desc:'Personalised therapy recommendations tailored to you' },
+                { title:'Quick Response', desc:"We'll contact you within 24 hours to confirm your appointment" },
+                { title:'Consultation', desc:'Comprehensive assessment of your health and wellness needs' },
+                { title:'Treatment Plan', desc:'Personalised therapy recommendations tailored to you' },
               ].map((item, i) => (
                 <div className="expect-row" key={i}>
                   <CheckCircle size={22} color="var(--teal)" />

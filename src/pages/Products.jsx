@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingCart, Star, Filter, Search } from 'lucide-react'
-import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
 import { useProducts } from '../contexts/ProductsContext'
 import './Products.css'
@@ -31,7 +30,7 @@ const Products = ()=> {
     })
 
   const handleHoverEnter = () => {
-    hoverTimer.current = setTimeout(() => playChime(), 600)
+    // hoverTimer.current = setTimeout(() => playChime(), 600)
   }
   const handleHoverLeave = () => {
     clearTimeout(hoverTimer.current)
@@ -40,7 +39,6 @@ const Products = ()=> {
   const handleAddToCart = (e, product) => {
     e.preventDefault()
     e.stopPropagation()
-    playChime()
     addToCart(product)
     setAddedId(product.id)
     setTimeout(() => setAddedId(null), 2000)

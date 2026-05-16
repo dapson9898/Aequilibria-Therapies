@@ -4,12 +4,12 @@ import { Leaf, Home, ArrowLeft, Search } from 'lucide-react'
 import './NotFound.css'
 
 const QUICK_LINKS = [
-  { to: '/services',             label: 'Our Services' },
-  { to: '/products',             label: 'Wellness Products' },
+  { to: '/services', label: 'Our Services' },
+  { to: '/products', label: 'Wellness Products' },
   { to: '/alternative-medicine', label: 'Alternative Medicine' },
-  { to: '/book-session',         label: 'Book a Session' },
-  { to: '/about',                label: 'About Us' },
-  { to: '/contact',              label: 'Contact Us' },
+  { to: '/book-session', label: 'Book a Session' },
+  { to: '/about', label: 'About Us' },
+  { to: '/contact', label: 'Contact Us' },
 ]
 
 const NotFound = () => {

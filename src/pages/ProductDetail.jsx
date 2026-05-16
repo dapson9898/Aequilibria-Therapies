@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ShoppingCart, Zap, Star, ChevronLeft, Check, Package, Shield, Truck, RefreshCw } from 'lucide-react'
-import { playChime } from '../hooks/useChimes.js'
 import { useCart } from '../contexts/CartContext'
 import './ProductDetail.css'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+// const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.onrender.com'
+const API_BASE = import.meta.env.VITE_API_URL || 'https://aequilibria-backend.vercel.app'
 
 const formatPrice = p => `₦${p.toLocaleString()}`
 
@@ -49,7 +49,6 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     if (!product.inStock) return
-    playChime()
     addToCart(product, qty)
     setCartDone(true)
     setTimeout(() => setCartDone(false), 2500)
@@ -57,7 +56,6 @@ export default function ProductDetail() {
 
   const handleBuyNow = () => {
     if (!product.inStock) return
-    playChime()
     
     const message = `Hello! I'd like to purchase:\n\n${product.name}\nQuantity: ${qty}\nPrice: ₦${(product.price * qty).toLocaleString()}\n\nPlease process my order.`
     
@@ -251,7 +249,8 @@ export default function ProductDetail() {
             </div>
             <div className="related-grid">
               {related.map(rp => (
-                <Link to={`/products/${rp.id}`} className="related-card" key={rp.id} onClick={() => { playChime(); window.scrollTo(0,0) }}>
+                // Right below useChime();
+                <Link to={`/products/${rp.id}`} className="related-card" key={rp.id} onClick={() => { window.scrollTo(0,0) }}>
                   <div className="related-img"><img src={rp.img} alt={rp.name} /></div>
                   <div className="related-info">
                     <h3>{rp.name}</h3>

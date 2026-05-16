@@ -33,7 +33,6 @@ const WHY_BEST = [
   { icon: <Target size={22} />, title: 'Multi-Disciplinary Expertise', desc: 'Seven specialised healing modalities under one roof for comprehensive, integrated treatment.' },
   { icon: <Users size={22} />, title: 'Experienced Practitioners', desc: 'My team brings years of training and clinical experience in alternative medicine.' },
   { icon: <TrendingUp size={22} />, title: 'Proven Track Record', desc: 'My numerous satisfied patients have experienced real, measurable health improvements.' },
-  // { icon: <Sparkles size={22} />, title: 'Modern Facilities', desc: 'Professional, serene treatment spaces equipped with the latest therapeutic technologies.' },
   { icon: <Heart size={22} />, title: 'Patient-Centered Care', desc: 'I listen, I care, and I partner with you on your healing journey.' },
   { icon: <Star size={22} />, title: 'Comprehensive Assessments', desc: 'Thorough evaluations to understand your complete health picture before treatment.' },
   { icon: <Activity size={22} />, title: 'Ongoing Support', desc: 'Continuous monitoring and adjustment of your treatment plan to ensure optimal results.' },
@@ -46,7 +45,6 @@ const FAQS = [
   { question: 'Is alternative medicine safe?', answer: "Yes, when practiced by qualified, licensed professionals like our team. Alternative medicine therapies have been used safely for centuries and continue to be validated by modern research. We conduct thorough health assessments, use sterile equipment, and follow strict safety protocols. However, we always recommend informing your primary care physician about any alternative treatments you're receiving." },
   { question: 'Does alternative medicine really work?', answer: 'Absolutely. Alternative medicine has a strong evidence base and has been proven effective for numerous conditions. Acupuncture, for instance, is recognized by the WHO for treating over 40 conditions. Millions of people worldwide rely on alternative medicine for relief and healing. While individual results vary, our patients consistently report significant improvements in pain, stress, energy, and overall wellbeing.' },
   { question: 'How long does treatment take to work?', answer: "This depends on your condition, its severity, and how long you've had it. Some patients notice improvements after the first session, while others need several treatments. Acute conditions typically respond faster (3-6 sessions), while chronic conditions may require 8-12 sessions or more. We'll provide realistic timelines during your initial consultation." },
-  // { question: 'Can I use alternative medicine with conventional treatment?', answer: "In most cases, yes! Alternative medicine often works beautifully alongside conventional treatments. Many of our patients use our therapies to complement their conventional care, manage side effects of medications, or enhance overall treatment outcomes. We encourage open communication between all your healthcare providers." },
 ]
 
 const AlternativeMedicine = () => {

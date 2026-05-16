@@ -32,11 +32,6 @@ const About = () => {
           </div>
           <div className="story-text">
             <h2>My Story</h2>
-            {/* <pre>
-              "For every disease, Allah has created a cure."
-              — Prophet Muhammad ﷺ
-              That saying has never left me.
-            </pre> */}
             <pre>"For every disease, Allah has created a cure."</pre>
             <pre>— Prophet Muhammad ﷺ</pre>
             <pre>That saying has never left me.</pre>
